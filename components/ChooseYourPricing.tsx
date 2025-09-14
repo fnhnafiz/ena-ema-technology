@@ -100,7 +100,7 @@ const ChooseYourPricing = () => {
             <div className="mb-8 flex-grow-1">
               <ul className="space-y-4">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
+                  <li key={featureIndex} className="flex items-center gap-3">
                     <div className="flex-shrink-0 mt-0.5">
                       <div className="w-2 h-2 bg-[#1FFFA5] rounded-full"></div>
                     </div>
@@ -146,7 +146,10 @@ const ChooseYourPricing = () => {
             {/* Offer Container */}
             <div className="bg-[#192420] rounded-3xl py-12 px-6 md:py-16 md:px-12 text-center">
               {/* Main Heading */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-[#F5F5F5] mb-6 md:mb-8 leading-tight">
+              <h2 className="hidden md:block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-[#F5F5F5] mb-6 md:mb-8 leading-tight">
+                Special Offer For Early Clients
+              </h2>
+              <h2 className="md:block text-[#1FFFA5] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mb-6 md:mb-8 leading-tight">
                 Special Offer For Early Clients
               </h2>
 

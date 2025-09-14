@@ -63,3 +63,18 @@ body {
   }
 }
 /* case studies slider */
+/* Slick slider gaps */
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+.case-studies-slider .slick-slide > div {
+  margin: 0 10px;
+}
+
+.case-studies-slider .slick-list {
+  margin: 0 -10px;
+}

@@ -4,11 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../app/globals.css";
 import caseStudiesImage from "@/public/case-studies/image 8.png";
+import caseStudiesImage2 from "@/public/case-studies/MacBook Pro 16_ - 2.png";
+import caseStudiesImage3 from "@/public/case-studies/MacBook Pro 16_ - 3.png";
+import caseStudiesImage4 from "@/public/case-studies/image 26.png";
 import { Check } from "lucide-react";
 import Image from "next/image";
 const CaseStudiesSlider = () => {
   const settings = {
     className: "center",
+    arrows: false,
     centerMode: true,
     infinite: true,
     slidesToShow: 3,
@@ -16,14 +20,15 @@ const CaseStudiesSlider = () => {
     speed: 500,
     focusOnSelect: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
 
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
+          centerMode: false,
           centerPadding: "0px",
         },
       },
@@ -31,23 +36,22 @@ const CaseStudiesSlider = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
-          centerPadding: "50px",
+          centerMode: false,
+          centerPadding: "0px",
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          centerMode: true,
-          centerPadding: "20px",
+          centerMode: false,
+          centerPadding: "0px",
         },
       },
     ],
   };
-
   return (
-    <div className=" container mx-auto">
+    <div className=" my-12  hidden md:block">
       <Slider {...settings}>
         <div>
           {/* first card */}
@@ -80,14 +84,16 @@ const CaseStudiesSlider = () => {
           <div className="p-4 border-2 border-[#2A3C36] bg-[#151E1B] rounded-xl space-y-4 ">
             <div className="w-full">
               <Image
-                src={caseStudiesImage}
+                src={caseStudiesImage2}
                 className="w-full h-full"
                 alt="case studies image"
               />
             </div>
             {/* card footer */}
             <div className="flex justify-between items-start">
-              <span className="text-white text-2xl font-bold">Flowpilot</span>
+              <span className="text-white text-2xl font-bold">
+                GrowthSummit
+              </span>
               <div className="space-y-2">
                 <button className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center">
                   <Check size={20} className="text-[#1FFFA5]" />
@@ -106,7 +112,7 @@ const CaseStudiesSlider = () => {
           <div className="p-4 border-2 border-[#2A3C36] bg-[#151E1B] rounded-xl space-y-4 ">
             <div className="w-full">
               <Image
-                src={caseStudiesImage}
+                src={caseStudiesImage3}
                 className="w-full h-full"
                 alt="case studies image"
               />
@@ -158,14 +164,16 @@ const CaseStudiesSlider = () => {
           <div className="p-4 border-2 border-[#2A3C36] bg-[#151E1B] rounded-xl space-y-4 ">
             <div className="w-full">
               <Image
-                src={caseStudiesImage}
+                src={caseStudiesImage4}
                 className="w-full h-full"
                 alt="case studies image"
               />
             </div>
             {/* card footer */}
             <div className="flex justify-between items-start">
-              <span className="text-white text-2xl font-bold">Flowpilot</span>
+              <span className="text-white text-2xl font-bold">
+                GrowthSummit
+              </span>
               <div className="space-y-2">
                 <button className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center">
                   <Check size={20} className="text-[#1FFFA5]" />

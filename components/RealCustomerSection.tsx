@@ -3,7 +3,11 @@ import LoginPage from "./LoginPage";
 const RealCustomerSection = () => {
   return (
     <>
-      <div className="bg-[#0A0F0D] py-22">
+      <div className="bg-[#0A0F0D] py-22 relative">
+        <div
+          className="bg-[#1FFFA5] h-[550px] w-[700px] rounded-full absolute 
+        top-[10%] -left-[10%] blur-3xl opacity-[4%]"
+        ></div>
         {/* Heading of heeader */}
         <div className="max-w-6xl mx-auto flex flex-col justify-center items-center gap-y-4 md:px-[130px]">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center text-[#F5F5F5] leading-9 md:leading-[72px] tracking-tight md:tracking-[-4px] lg:tracking-[-1px]">
@@ -18,6 +22,10 @@ const RealCustomerSection = () => {
         <div className="mb-12">
           <LoginPage />
         </div>
+        <div
+          className="bg-[#1FFFA5] h-[550px] w-[700px] rounded-full absolute 
+        top-[20%] -right-[10%] blur-3xl opacity-[3%]"
+        ></div>
       </div>
     </>
   );
