@@ -1,6 +1,25 @@
+"use client";
 import { ArrowRight } from "lucide-react";
-import specialIcon from "@/public/Vector.png";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import SpecialOffer from "./SpecialOffer";
+import {
+  pricingSectionVariants,
+  pricingHeaderVariants,
+  pricingSubtitleVariants,
+  pricingGridVariants,
+  pricingCardVariants,
+  pricingPopularBadgeVariants,
+  pricingPlanNameVariants,
+  pricingDescriptionVariants,
+  pricingPriceVariants,
+  pricingFeaturesContainerVariants,
+  pricingFeatureVariants,
+  pricingFeatureDotVariants,
+  pricingButtonVariants,
+  pricingArrowVariants,
+  pricingViewportConfig,
+} from "@/animations/varriants";
+
 const ChooseYourPricing = () => {
   const pricingPlans = [
     {
@@ -50,132 +69,156 @@ const ChooseYourPricing = () => {
     },
   ];
   return (
-    <div className="container mx-auto px-4 mb-30">
+    <motion.div
+      className="container mx-auto px-4 mb-30"
+      variants={pricingSectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={pricingViewportConfig.section}
+    >
       {/* Heading of pricing card */}
       <div className="w-full space-y-2">
-        <h1 className="text-[#F5F5F5] font-medium text-5xl ">
+        <motion.h1
+          className="text-[#F5F5F5] font-medium text-5xl"
+          variants={pricingHeaderVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={pricingViewportConfig.header}
+        >
           Simple, Transparent Pricing —{" "}
-          <span className="text-[#1FFFA5]">Choose Your Plan</span>
-        </h1>
+          <motion.span
+            className="text-[#1FFFA5]"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              transition: { delay: 0.3, duration: 0.5, ease: "backOut" },
+            }}
+            viewport={pricingViewportConfig.header}
+          >
+            Choose Your Plan
+          </motion.span>
+        </motion.h1>
 
-        <p className="text-[#F5F5F5] font-medium">
+        <motion.p
+          className="text-[#F5F5F5] font-medium"
+          variants={pricingSubtitleVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={pricingViewportConfig.header}
+        >
           No hidden fees, no surprises. Just premium landing pages at unbeatable
           prices.
-        </p>
+        </motion.p>
       </div>
+
       {/* Pricing card */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 py-12">
-        {/* first card */}
+      <motion.div
+        className="grid grid-cols-1 lg:grid-cols-3 gap-12 py-12"
+        variants={pricingGridVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={pricingViewportConfig.grid}
+      >
         {pricingPlans.map((plan, index) => (
-          <div
+          <motion.div
             key={index}
             className={`
-                bg-[#192420] rounded-2xl p-8 transition-all duration-300 hover:border-2 hover:border-[#1FFFA5] border-2 border-transparent relative flex flex-col
-                ${plan.popular ? "ring-2 ring-[#1FFFA5] ring-opacity-50" : ""}
-              `}
+              bg-[#192420] rounded-2xl p-8 transition-all duration-300 hover:border-2 hover:border-[#1FFFA5] border-2 border-transparent relative flex flex-col group
+              ${plan.popular ? "ring-2 ring-[#1FFFA5] ring-opacity-50" : ""}
+            `}
+            variants={pricingCardVariants}
+            whileHover="hover"
+            style={{ perspective: 1000 }}
           >
             {/* Popular Badge */}
             {plan.popular && (
-              <div className="absolute -top-4 left-[20%] transform -translate-x-1/2">
+              <motion.div
+                className="absolute -top-4 left-[20%] transform -translate-x-1/2"
+                variants={pricingPopularBadgeVariants}
+                whileHover="hover"
+              >
                 <div className="bg-[#1FFFA5] text-black px-4 py-1 rounded-full text-sm font-bold">
                   Most Popular
                 </div>
-              </div>
+              </motion.div>
             )}
 
             {/* Plan Header */}
             <div className="mb-8 border-b border-[#2A3C36] pb-12">
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <motion.h3
+                className="text-2xl font-bold text-white mb-2"
+                variants={pricingPlanNameVariants}
+              >
                 {plan.name}
-              </h3>
-              <p className="text-[#F5F5F5] text-sm mb-4">{plan.description}</p>
+              </motion.h3>
+
+              <motion.p
+                className="text-[#F5F5F5] text-sm mb-4"
+                variants={pricingDescriptionVariants}
+              >
+                {plan.description}
+              </motion.p>
+
               <div className="flex items-baseline">
-                <span className="text-4xl font-bold text-[#1FFFA5]">
+                <motion.span
+                  className="text-4xl font-bold text-[#1FFFA5]"
+                  variants={pricingPriceVariants}
+                  whileHover="hover"
+                >
                   {plan.price}
-                </span>
+                </motion.span>
               </div>
             </div>
 
             {/* Features List */}
-            <div className="mb-8 flex-grow-1">
+            <motion.div
+              className="mb-8 flex-grow-1"
+              variants={pricingFeaturesContainerVariants}
+            >
               <ul className="space-y-4">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center gap-3">
+                  <motion.li
+                    key={featureIndex}
+                    className="flex items-center gap-3"
+                    variants={pricingFeatureVariants}
+                  >
                     <div className="flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 bg-[#1FFFA5] rounded-full"></div>
+                      <motion.div
+                        className="w-2 h-2 bg-[#1FFFA5] rounded-full"
+                        variants={pricingFeatureDotVariants}
+                      />
                     </div>
                     <span className="text-[#F5F5F5] text-sm leading-relaxed">
                       {feature}
                     </span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* CTA Button */}
-            <button className="w-full bg-[#1a5d3a] hover:bg-[#1FFFA5] text-[#00E58A] hover:text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 text-base group cursor-pointer">
+            <motion.button
+              className="w-full bg-[#1a5d3a] group-hover:bg-[#1FFFA5] text-[#00E58A] group-hover:text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 text-base cursor-pointer"
+              variants={pricingButtonVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
               {plan.buttonText}
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform duration-300"
-              />
-            </button>
-          </div>
-        ))}
-      </div>
-
-      {/* special offers */}
-      <div>
-        {/* headig of special offers */}
-        <div className="flex gap-4 items-center py-12">
-          <div>
-            <Image src={specialIcon} className="w-8 h-8" alt="icon" />
-          </div>
-          <div className="space-y-2">
-            <h1 className="text-[#F5F5F5] text-2xl font-bold leading-6">
-              Limited Availability
-            </h1>
-            <p className="text-[#B2B2B2] text-[14px] font-medium leading-6">
-              We only onboard 5 new clients per month. 2 spots left for this
-              month — secure yours today.
-            </p>
-          </div>
-        </div>
-        <div className="">
-          <div className="">
-            {/* Offer Container */}
-            <div className="bg-[#192420] rounded-3xl py-12 px-6 md:py-16 md:px-12 text-center">
-              {/* Main Heading */}
-              <h2 className="hidden md:block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-[#F5F5F5] mb-6 md:mb-8 leading-tight">
-                Special Offer For Early Clients
-              </h2>
-              <h2 className="md:block text-[#1FFFA5] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mb-6 md:mb-8 leading-tight">
-                Special Offer For Early Clients
-              </h2>
-
-              {/* Subtitle */}
-              <p className="text-base md:text-lg lg:text-xl text-[#F5F5F5] mb-8 md:mb-12 max-w-3xl mx-auto leading-6">
-                Get 10% OFF + Free Hosting Setup when you book this week.
-              </p>
-
-              {/* CTA Button */}
-              <button
-                className="bg-[#1FFFA5] hover:bg-[#1ae89a] text-black font-bold py-4 px-8 md:py-5 md:px-10 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 text-base md:text-lg mx-auto transform hover:scale-105 active:scale-95 group cursor-pointer mt-22"
-                style={{
-                  boxShadow: "0px 12px 32px 0px rgba(31, 255, 165, 0.3)",
-                }}
-              >
-                Claim my 10% discount
+              <motion.div variants={pricingArrowVariants}>
                 <ArrowRight
-                  size={20}
+                  size={18}
                   className="group-hover:translate-x-1 transition-transform duration-300"
                 />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              </motion.div>
+            </motion.button>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* SpecialOffer Component*/}
+      <SpecialOffer />
+    </motion.div>
   );
 };
 

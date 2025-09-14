@@ -1,3 +1,22 @@
+"use client";
+import { motion } from "framer-motion";
+
+import {
+  faqSectionVariants,
+  faqHeaderVariants,
+  faqHighlightVariants,
+  faqContainerVariants,
+  faqCardVariants,
+  faqCardContentVariants,
+  faqGreenDotVariants,
+  faqQuestionVariants,
+  faqAnswerVariants,
+  faqPulseVariants,
+  faqFloatVariants,
+  faqShimmerVariants,
+  faqViewportConfig,
+} from "@/animations/varriants";
+
 const FaqQuestionSection = () => {
   const faqs = [
     {
@@ -28,44 +47,91 @@ const FaqQuestionSection = () => {
   ];
 
   return (
-    <div className="container mx-auto py-30">
-      <div>
-        <h1 className="text-center font-medium text-[36px] md:text-5xl text-white">
-          Got Questions<span className="text-[#1FFFA5]">?</span> We’ve Got The
-          Answers
-        </h1>
-      </div>
+    <motion.div
+      className="container mx-auto py-30"
+      variants={faqSectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={faqViewportConfig.section}
+    >
+      <motion.div
+        variants={faqHeaderVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={faqViewportConfig.header}
+      >
+        <motion.h1
+          className="text-center font-medium text-[36px] md:text-5xl text-white"
+          variants={faqPulseVariants}
+          animate="animate"
+        >
+          Got Questions
+          <motion.span
+            className="text-[#1FFFA5]"
+            variants={faqHighlightVariants}
+            whileHover="hover"
+            animate={faqShimmerVariants.animate}
+          >
+            ?
+          </motion.span>{" "}
+          We've Got The Answers
+        </motion.h1>
+      </motion.div>
+
       <div className="w-full py-16 px-4">
         <div className="max-w-7xl mx-auto">
           {/* FAQ Cards */}
-          <div className="space-y-6 ">
+          <motion.div
+            className="space-y-6"
+            variants={faqContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={faqViewportConfig.container}
+          >
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-[#192420] rounded-2xl p-8 flex flex-col gap-6"
+                variants={faqCardVariants}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                viewport={{ once: false, amount: 0.3 }}
+                style={{ perspective: 1000 }}
               >
                 {/* Green Dot */}
-                <div className="">
-                  <div className="w-3 h-3 bg-[#1FFFA5] rounded-full"></div>
-                </div>
+                <motion.div className="">
+                  <motion.div
+                    className="w-3 h-3 bg-[#1FFFA5] rounded-full"
+                    variants={faqGreenDotVariants}
+                    whileHover="hover"
+                    animate={faqFloatVariants.animate}
+                  />
+                </motion.div>
 
                 <div className="space-y-4">
                   {/* Question */}
-                  <h3 className="text-xl md:text-2xl font-bold text-white ">
+                  <motion.h3
+                    className="text-xl md:text-2xl font-bold text-white"
+                    variants={faqQuestionVariants}
+                  >
                     {faq.question}
-                  </h3>
+                  </motion.h3>
 
                   {/* Answer */}
-                  <p className="text-[#F5F5F5] text-base md:text-lg leading-relaxed  opacity-90">
+                  <motion.p
+                    className="text-[#F5F5F5] text-base md:text-lg leading-relaxed opacity-90"
+                    variants={faqAnswerVariants}
+                  >
                     {faq.answer}
-                  </p>
+                  </motion.p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
