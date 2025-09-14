@@ -325,7 +325,7 @@ const CaseStudies = () => {
           whileTap="tap"
           viewport={caseStudiesViewportConfig.button}
           className="block mx-auto bg-[#1FFFA5] hover:bg-[#1ae89a] text-[#002013] text-sm font-medium md:font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 md:text-lg transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-          style={{ boxShadow: "0px 10px 30px rgba(31, 255, 165, 0.3)" }}
+          // style={{ boxShadow: "0px 10px 30px rgba(31, 255, 165, 0.3)" }}
         >
           Get my high-converting landing page
           <motion.div

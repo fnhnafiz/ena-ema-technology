@@ -37,7 +37,7 @@ export const logoVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -85,7 +85,7 @@ export const headingVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -232,7 +232,7 @@ export const scrollScale = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -363,7 +363,7 @@ export const trustHeaderVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -398,25 +398,25 @@ export const trustGridVariants = {
 export const trustCardVariants = {
   hidden: {
     opacity: 0,
-    y: 80, // ⬅️ CHANGED: Increased from 40 to 80 for more dramatic effect
-    scale: 0.8, // ⬅️ CHANGED: More dramatic scale from 0.95 to 0.8
-    rotateX: 15, // ⬅️ NEW: 3D rotation effect
+    y: 80, 
+    scale: 0.8,
+    rotateX: 15, 
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    rotateX: 0, // ⬅️ NEW: Reset rotation
+    rotateX: 0, 
     transition: {
-      duration: 0.8, // ⬅️ CHANGED: Longer duration from 0.6 to 0.8
-      ease: [0.25, 0.46, 0.45, 0.94], // ⬅️ CHANGED: More bouncy easing
+      duration: 0.8, 
+      ease: [0.25, 0.46, 0.45, 0.94] as const, 
     },
   },
   hover: {
     scale: 1.05,
-    y: -8, // ⬅️ NEW: Lift effect
-    rotateY: 2, // ⬅️ NEW: Subtle 3D tilt
-    boxShadow: "0 25px 50px rgba(31, 255, 165, 0.15)", // ⬅️ NEW: Green glow shadow
+    y: -8, 
+    rotateY: 2, 
+    boxShadow: "0 25px 50px rgba(31, 255, 165, 0.15)", 
     transition: {
       duration: 0.3,
       ease: "easeOut" as const,
@@ -438,7 +438,7 @@ export const trustIconVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.2,
     },
   },
@@ -512,16 +512,16 @@ export const caseStudiesSectionVariants = {
 export const caseStudiesHeaderVariants = {
   hidden: {
     opacity: 0,
-    y: 20, // ⬅️ CHANGED: Less movement (40 → 20)
-    // scale: 0.95,            // ⬅️ REMOVED: No scale for simplicity
+    y: 20, 
+    // scale: 0.95,           
   },
   visible: {
     opacity: 1,
     y: 0,
     // scale: 1,
     transition: {
-      duration: 0.5, // ⬅️ CHANGED: Faster (0.7 → 0.5)
-      ease: "easeOut" as const, // ⬅️ CHANGED: Simple easing
+      duration: 0.5,
+      ease: "easeOut" as const, 
     },
   },
 };
@@ -529,15 +529,15 @@ export const caseStudiesHeaderVariants = {
 export const caseStudiesSubtitleVariants = {
   hidden: {
     opacity: 0,
-    y: 15, // ⬅️ CHANGED: Less movement (25 → 15)
+    y: 15, 
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4, // ⬅️ CHANGED: Faster (0.6 → 0.4)
+      duration: 0.4,
       ease: "easeOut" as const,
-      delay: 0.1, // ⬅️ CHANGED: Less delay (0.2 → 0.1)
+      delay: 0.1, 
     },
   },
 };
@@ -556,9 +556,8 @@ export const caseStudiesGridVariants = {
 export const caseStudiesCardVariants = {
   hidden: {
     opacity: 0,
-    y: 30, // ⬅️ CHANGED: Less movement (60 → 30)
-    // scale: 0.9,             // ⬅️ REMOVED: No scale
-    // rotateY: -15,           // ⬅️ REMOVED: No 3D rotation
+    y: 30, 
+   
   },
   visible: {
     opacity: 1,
@@ -566,18 +565,17 @@ export const caseStudiesCardVariants = {
     // scale: 1,
     // rotateY: 0,
     transition: {
-      duration: 0.5, // ⬅️ CHANGED: Faster (0.8 → 0.5)
-      ease: "easeOut" as const, // ⬅️ CHANGED: Simple easing
+      duration: 0.5, 
+      ease: "easeOut" as const, 
     },
   },
   hover: {
-    y: -5, // ⬅️ CHANGED: Less lift (-10 → -5)
-    scale: 1.02, // ⬅️ CHANGED: Subtle scale (1.03 → 1.02)
-    // rotateY: 2,             // ⬅️ REMOVED: No 3D rotation
-    boxShadow: "0 10px 25px rgba(31, 255, 165, 0.08)", // ⬅️ CHANGED: Subtle shadow
-    // borderColor: "rgba(31, 255, 165, 0.3)", // ⬅️ REMOVED
+    y: -5, 
+    scale: 1.02, 
+   
+    boxShadow: "0 10px 25px rgba(31, 255, 165, 0.08)", 
     transition: {
-      duration: 0.2, // ⬅️ CHANGED: Faster hover (0.3 → 0.2)
+      duration: 0.2, 
       ease: "easeOut" as const,
     },
   },
@@ -586,23 +584,23 @@ export const caseStudiesCardVariants = {
 export const caseStudiesImageVariants = {
   hidden: {
     opacity: 0,
-    scale: 1.05, // ⬅️ CHANGED: Less scale (1.2 → 1.05)
-    // rotateX: 10,            // ⬅️ REMOVED: No 3D rotation
+    scale: 1.05, 
+   
   },
   visible: {
     opacity: 1,
     scale: 1,
     // rotateX: 0,
     transition: {
-      duration: 0.6, // ⬅️ CHANGED: Faster (0.8 → 0.6)
+      duration: 0.6,
       ease: "easeOut" as const,
-      delay: 0.05, // ⬅️ CHANGED: Less delay (0.1 → 0.05)
+      delay: 0.05, 
     },
   },
   hover: {
-    scale: 1.02, // ⬅️ CHANGED: Subtle hover (1.05 → 1.02)
+    scale: 1.02, 
     transition: {
-      duration: 0.2, // ⬅️ CHANGED: Faster (0.3 → 0.2)
+      duration: 0.2,
       ease: "easeOut" as const,
     },
   },
@@ -611,17 +609,17 @@ export const caseStudiesImageVariants = {
 export const caseStudiesTitleVariants = {
   hidden: {
     opacity: 0,
-    x: -15, // ⬅️ CHANGED: Less movement (-30 → -15)
-    // scale: 0.9,             // ⬅️ REMOVED: No scale
+    x: -15,
+   
   },
   visible: {
     opacity: 1,
     x: 0,
     // scale: 1,
     transition: {
-      duration: 0.4, // ⬅️ CHANGED: Faster (0.6 → 0.4)
+      duration: 0.4,
       ease: "easeOut" as const,
-      delay: 0.1, // ⬅️ CHANGED: Less delay (0.3 → 0.1)
+      delay: 0.1,
     },
   },
 };
@@ -629,17 +627,17 @@ export const caseStudiesTitleVariants = {
 export const caseStudiesBadgeVariants = {
   hidden: {
     opacity: 0,
-    // scale: 0.8,             // ⬅️ REMOVED: No scale
-    x: -10, // ⬅️ CHANGED: Less movement (-20 → -10)
+   
+    x: -10, 
   },
   visible: {
     opacity: 1,
     // scale: 1,
     x: 0,
     transition: {
-      duration: 0.3, // ⬅️ CHANGED: Faster (0.5 → 0.3)
-      ease: "easeOut" as const, // ⬅️ CHANGED: Simple easing
-      delay: 0.05, // ⬅️ CHANGED: Less delay (0.1 → 0.05)
+      duration: 0.3, 
+      ease: "easeOut" as const,
+      delay: 0.05, 
     },
   },
 };
@@ -649,8 +647,8 @@ export const caseStudiesBadgeContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05, // ⬅️ CHANGED: Faster stagger (0.1 → 0.05)
-      delayChildren: 0.2, // ⬅️ CHANGED: Less delay (0.4 → 0.2)
+      staggerChildren: 0.05,
+      delayChildren: 0.2,
     },
   },
 };
@@ -658,21 +656,21 @@ export const caseStudiesBadgeContainerVariants = {
 export const caseStudiesButtonVariants = {
   hidden: {
     opacity: 0,
-    y: 25, // ⬅️ CHANGED: Less movement (40 → 25)
-    // scale: 0.9,             // ⬅️ REMOVED: No scale
+    y: 25, 
+  
   },
   visible: {
     opacity: 1,
     y: 0,
     // scale: 1,
     transition: {
-      duration: 0.5, // ⬅️ CHANGED: Faster (0.7 → 0.5)
-      ease: "easeOut" as const, // ⬅️ CHANGED: Simple easing
+      duration: 0.5,
+      ease: "easeOut" as const, 
     },
   },
   hover: {
-    scale: 1.02, // ⬅️ CHANGED: Subtle scale (1.05 → 1.02)
-    y: -2, // ⬅️ CHANGED: Less lift (-3 → -2)
+    scale: 1.02,
+    y: -2, 
     boxShadow: "0px 12px 35px rgba(31, 255, 165, 0.35)", // ⬅️ CHANGED: Slightly reduced shadow
     transition: {
       duration: 0.2, // ⬅️ CHANGED: Faster (0.3 → 0.2)
@@ -689,11 +687,11 @@ export const caseStudiesButtonVariants = {
 
 // Viewport configurations for Case Studies - UPDATED
 export const caseStudiesViewportConfig = {
-  section: { once: false, amount: 0.05 }, // ⬅️ CHANGED: More sensitive (0.1 → 0.05)
-  header: { once: false, amount: 0.4 }, // ⬅️ CHANGED: Less strict (0.6 → 0.4)
-  grid: { once: false, amount: 0.1 }, // ⬅️ CHANGED: More sensitive (0.2 → 0.1)
-  card: { once: false, amount: 0.2 }, // ⬅️ CHANGED: More sensitive (0.3 → 0.2)
-  button: { once: false, amount: 0.3 }, // ⬅️ CHANGED: More sensitive (0.5 → 0.3)
+  section: { once: false, amount: 0.05 }, 
+  header: { once: false, amount: 0.4 }, 
+  grid: { once: false, amount: 0.1 }, 
+  card: { once: false, amount: 0.2 }, 
+  button: { once: false, amount: 0.3 }, 
 };
 
 // Pricing Section specific animations/////////
@@ -762,7 +760,7 @@ export const pricingCardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
   hover: {
@@ -787,7 +785,7 @@ export const pricingPopularBadgeVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.3,
     },
   },
@@ -841,7 +839,7 @@ export const pricingPriceVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
       delay: 0.2,
     },
   },
@@ -889,7 +887,7 @@ export const pricingFeatureDotVariants = {
     scale: 1,
     transition: {
       duration: 0.3,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.1,
     },
   },
@@ -981,7 +979,7 @@ export const specialOfferIconVariants = {
     rotate: 0,
     transition: {
       duration: 0.6,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
     },
   },
   hover: {
@@ -1038,7 +1036,7 @@ export const specialOfferContainerVariants = {
     scale: 1,
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
       delay: 0.2,
     },
   },
@@ -1065,7 +1063,7 @@ export const specialOfferMainHeadingVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
       delay: 0.1,
     },
   },
@@ -1083,7 +1081,7 @@ export const specialOfferMobileHeadingVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
       delay: 0.1,
     },
   },
@@ -1117,7 +1115,7 @@ export const specialOfferButtonVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
       delay: 0.5,
     },
   },
@@ -1231,7 +1229,7 @@ export const processTimelineHeaderVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -1275,7 +1273,7 @@ export const processTimelineStepVariants = {
     scale: 1,
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
   hover: {
@@ -1323,7 +1321,7 @@ export const processTimelineStepBadgeVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.1,
     },
   },
@@ -1348,7 +1346,7 @@ export const processTimelineIconContainerVariants = {
     rotate: 0,
     transition: {
       duration: 0.7,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.2,
     },
   },
@@ -1506,7 +1504,7 @@ export const clientsReviewsMainHeadingVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -1523,7 +1521,7 @@ export const clientsReviewsHighlightVariants = {
     x: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.3,
     },
   },
@@ -1563,7 +1561,7 @@ export const clientsReviewsMarqueeContainerVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
       delay: 0.3,
     },
   },
@@ -1637,7 +1635,7 @@ export const faqHeaderVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -1654,7 +1652,7 @@ export const faqHighlightVariants = {
     rotate: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.3,
     },
   },
@@ -1681,8 +1679,8 @@ export const faqContainerVariants = {
 export const faqCardVariants = {
   hidden: {
     opacity: 0,
-    y: 50, // Slide up from bottom
-    scale: 0.95, // Slight scale effect
+    y: 50, 
+    scale: 0.95, 
   },
   visible: {
     opacity: 1,
@@ -1690,7 +1688,7 @@ export const faqCardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94], // Smooth easing
+      ease: [0.25, 0.46, 0.45, 0.94] as const, 
     },
   },
   hover: {
@@ -1727,7 +1725,7 @@ export const faqGreenDotVariants = {
     rotate: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55], // Bouncy spring
+      ease: [0.68, -0.55, 0.265, 1.55] as const, 
     },
   },
   hover: {
@@ -1883,7 +1881,7 @@ export const realCustomerMainHeadingVariants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
     },
   },
 };
@@ -1900,7 +1898,7 @@ export const realCustomerHighlightVariants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.4,
     },
   },
@@ -1942,7 +1940,7 @@ export const realCustomerCTAVariants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
       delay: 0.5,
     },
   },
@@ -2033,7 +2031,7 @@ export const loginFormContainerVariants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
   hover: {
@@ -2094,7 +2092,7 @@ export const loginIconVariants = {
     rotate: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.1,
     },
   },
@@ -2119,7 +2117,7 @@ export const loginSubmitButtonVariants = {
     scale: 1,
     transition: {
       duration: 0.7,
-      ease: [0.6, 0.05, 0.01, 0.9],
+      ease: [0.6, 0.05, 0.01, 0.9] as const,
       delay: 0.4,
     },
   },
@@ -2202,7 +2200,7 @@ export const loginTrustIconVariants = {
     scale: 1,
     transition: {
       duration: 0.4,
-      ease: [0.68, -0.55, 0.265, 1.55],
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
       delay: 0.05,
     },
   },
@@ -2353,7 +2351,7 @@ export const footerSocialIconVariants = {
     scale: 1,
     transition: {
       duration: 0.4,
-      ease: [0.68, -0.55, 0.265, 1.55], // Bouncy easing
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
     },
   },
   hover: {
