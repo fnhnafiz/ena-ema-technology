@@ -1,3 +1,4 @@
+"use client";
 import {
   Rocket,
   Palette,
@@ -6,6 +7,18 @@ import {
   RotateCcw,
   Trophy,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  trustSectionVariants,
+  trustHeaderVariants,
+  trustSubtitleVariants,
+  trustGridVariants,
+  trustCardVariants,
+  trustIconVariants,
+  trustTitleVariants,
+  trustDescriptionVariants,
+  trustViewportConfig,
+} from "@/animations/varriants";
 const TrustSection = () => {
   const features = [
     {
@@ -46,46 +59,112 @@ const TrustSection = () => {
     },
   ];
   return (
-    <div className="w-full py-16 px-4">
+    <motion.div
+      variants={trustSectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={trustViewportConfig.section}
+      className="w-full py-16 px-4"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-200 mb-4">
-            Why Businesses <span className="text-[#1FFFA5]">Trust Us</span> With
-            Their Designs
-          </h2>
-          <p className="text-[#F5F5F5] leading-4">
+          <motion.h2
+            variants={trustHeaderVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={trustViewportConfig.header}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-200 mb-4"
+          >
+            Why Businesses{" "}
+            <motion.span
+              className="text-[#1FFFA5]"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                transition: { delay: 0.3, duration: 0.5, ease: "backOut" },
+              }}
+              viewport={trustViewportConfig.header}
+            >
+              Trust Us
+            </motion.span>{" "}
+            With Their Designs
+          </motion.h2>
+          <motion.p
+            className="text-[#F5F5F5] leading-4"
+            variants={trustSubtitleVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={trustViewportConfig.header}
+          >
             We combine proven conversion frameworks with agency-level design to
             deliver results that matter.
-          </p>
+          </motion.p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap:2 lg:gap-6">
+        <motion.div
+          variants={trustGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={trustViewportConfig.grid}
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap:2 lg:gap-6"
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-[#192420] rounded-2xl p-8 hover:scale-105 transition-transform duration-300 group"
+              className="bg-[#192420] rounded-2xl p-8 group"
+              variants={trustCardVariants}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{
+                once: false,
+                amount: 0.2,
+              }}
+              style={{
+                perspective: 1000,
+              }}
             >
               {/* Icon */}
-              <div className="text-[#1FFFA5] mb-6 group-hover:scale-110 transition-transform duration-300">
+              <motion.div
+                className="text-[#1FFFA5] mb-6"
+                variants={trustIconVariants}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                viewport={{ once: false, amount: 0.3 }}
+              >
                 {feature.icon}
-              </div>
+              </motion.div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-4 leading-tight">
+              <motion.h3
+                className=" font-bold text-white mb-4 leading-tight"
+                variants={trustTitleVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+              >
                 {feature.title}
-              </h3>
+              </motion.h3>
 
               {/* Description */}
-              <p className="text-[#F5F5F5] text-base md:text-lg leading-relaxed opacity-90">
+              <motion.p
+                className="text-[#F5F5F5] text-[14px] leading-relaxed opacity-90"
+                variants={trustDescriptionVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.3 }}
+              >
                 {feature.description}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
