@@ -132,7 +132,7 @@ const LoginPage = () => {
 
           {/* Submit Button */}
           <motion.button
-            className="w-full bg-[#1FFFA5] hover:bg-[#1ae89a] text-[#002013] text-sm font-medium md:font-bold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 md:text-lg transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="w-full bg-[#1FFFA5] hover:bg-[#1ae89a] text-[#002013] text-[12px] sm:text-sm font-medium md:font-bold py-4 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 md:text-lg transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             style={{ boxShadow: "0px 10px 30px rgba(31, 255, 165, 0.3)" }}
             variants={loginSubmitButtonVariants}
             whileHover="hover"

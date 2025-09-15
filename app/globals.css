@@ -1,6 +1,14 @@
 @import "tailwindcss";
+
 body {
   background: #000;
+  overflow-x: hidden; /* Add this line */
+}
+.slider-container,
+.swiper,
+.banner-slider,
+.case-studies-slider {
+  overflow: hidden;
 }
 .banner-slider .slick-slide {
   padding: 0 8px;

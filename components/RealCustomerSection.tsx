@@ -22,7 +22,7 @@ const RealCustomerSection = () => {
   return (
     <>
       <motion.div
-        className="bg-[#0A0F0D] py-22 relative"
+        className="bg-[#0A0F0D] py-22 relative overflow-hidden"
         variants={realCustomerSectionVariants}
         initial="hidden"
         whileInView="visible"

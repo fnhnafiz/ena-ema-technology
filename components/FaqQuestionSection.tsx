@@ -48,7 +48,7 @@ const FaqQuestionSection = () => {
 
   return (
     <motion.div
-      className="container mx-auto py-30"
+      className="container mx-auto py-22"
       variants={faqSectionVariants}
       initial="hidden"
       whileInView="visible"
@@ -61,7 +61,7 @@ const FaqQuestionSection = () => {
         viewport={faqViewportConfig.header}
       >
         <motion.h1
-          className="text-center font-medium text-[36px] md:text-5xl text-white"
+          className="text-center font-medium text-[32px] md:text-5xl text-white px-4"
           variants={faqPulseVariants}
           animate="animate"
         >

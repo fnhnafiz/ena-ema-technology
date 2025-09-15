@@ -1,5 +1,3 @@
-// animations/variants.js - Enhanced with scroll support
-
 // Container animations for staggered children
 export const containerVariants = {
   hidden: { opacity: 0 },
@@ -154,7 +152,7 @@ export const cardVariants = {
   },
   hover: {
     y: -6,
-    scale: 1.02,
+    scale: 1,
     boxShadow: "0 15px 30px rgba(0, 0, 0, 0.2)",
     transition: {
       duration: 0.3,
@@ -398,25 +396,25 @@ export const trustGridVariants = {
 export const trustCardVariants = {
   hidden: {
     opacity: 0,
-    y: 80, 
+    y: 80,
     scale: 0.8,
-    rotateX: 15, 
+    rotateX: 15,
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    rotateX: 0, 
+    rotateX: 0,
     transition: {
-      duration: 0.8, 
-      ease: [0.25, 0.46, 0.45, 0.94] as const, 
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
   hover: {
-    scale: 1.05,
-    y: -8, 
-    rotateY: 2, 
-    boxShadow: "0 25px 50px rgba(31, 255, 165, 0.15)", 
+    scale: 1,
+    y: -4,
+    rotateY: 2,
+    boxShadow: "0 25px 50px rgba(31, 255, 165, 0.15)",
     transition: {
       duration: 0.3,
       ease: "easeOut" as const,
@@ -512,8 +510,8 @@ export const caseStudiesSectionVariants = {
 export const caseStudiesHeaderVariants = {
   hidden: {
     opacity: 0,
-    y: 20, 
-    // scale: 0.95,           
+    y: 20,
+    // scale: 0.95,
   },
   visible: {
     opacity: 1,
@@ -521,7 +519,7 @@ export const caseStudiesHeaderVariants = {
     // scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut" as const, 
+      ease: "easeOut" as const,
     },
   },
 };
@@ -529,7 +527,7 @@ export const caseStudiesHeaderVariants = {
 export const caseStudiesSubtitleVariants = {
   hidden: {
     opacity: 0,
-    y: 15, 
+    y: 15,
   },
   visible: {
     opacity: 1,
@@ -537,7 +535,7 @@ export const caseStudiesSubtitleVariants = {
     transition: {
       duration: 0.4,
       ease: "easeOut" as const,
-      delay: 0.1, 
+      delay: 0.1,
     },
   },
 };
@@ -556,8 +554,7 @@ export const caseStudiesGridVariants = {
 export const caseStudiesCardVariants = {
   hidden: {
     opacity: 0,
-    y: 30, 
-   
+    y: 30,
   },
   visible: {
     opacity: 1,
@@ -565,17 +562,17 @@ export const caseStudiesCardVariants = {
     // scale: 1,
     // rotateY: 0,
     transition: {
-      duration: 0.5, 
-      ease: "easeOut" as const, 
+      duration: 0.5,
+      ease: "easeOut" as const,
     },
   },
   hover: {
-    y: -5, 
-    scale: 1.02, 
-   
-    boxShadow: "0 10px 25px rgba(31, 255, 165, 0.08)", 
+    y: -5,
+    scale: 1.02,
+
+    boxShadow: "0 10px 25px rgba(31, 255, 165, 0.08)",
     transition: {
-      duration: 0.2, 
+      duration: 0.2,
       ease: "easeOut" as const,
     },
   },
@@ -584,8 +581,7 @@ export const caseStudiesCardVariants = {
 export const caseStudiesImageVariants = {
   hidden: {
     opacity: 0,
-    scale: 1.05, 
-   
+    scale: 1.05,
   },
   visible: {
     opacity: 1,
@@ -594,11 +590,11 @@ export const caseStudiesImageVariants = {
     transition: {
       duration: 0.6,
       ease: "easeOut" as const,
-      delay: 0.05, 
+      delay: 0.05,
     },
   },
   hover: {
-    scale: 1.02, 
+    scale: 1.02,
     transition: {
       duration: 0.2,
       ease: "easeOut" as const,
@@ -610,7 +606,6 @@ export const caseStudiesTitleVariants = {
   hidden: {
     opacity: 0,
     x: -15,
-   
   },
   visible: {
     opacity: 1,
@@ -627,17 +622,17 @@ export const caseStudiesTitleVariants = {
 export const caseStudiesBadgeVariants = {
   hidden: {
     opacity: 0,
-   
-    x: -10, 
+
+    x: -10,
   },
   visible: {
     opacity: 1,
     // scale: 1,
     x: 0,
     transition: {
-      duration: 0.3, 
+      duration: 0.3,
       ease: "easeOut" as const,
-      delay: 0.05, 
+      delay: 0.05,
     },
   },
 };
@@ -656,8 +651,7 @@ export const caseStudiesBadgeContainerVariants = {
 export const caseStudiesButtonVariants = {
   hidden: {
     opacity: 0,
-    y: 25, 
-  
+    y: 25,
   },
   visible: {
     opacity: 1,
@@ -665,12 +659,12 @@ export const caseStudiesButtonVariants = {
     // scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut" as const, 
+      ease: "easeOut" as const,
     },
   },
   hover: {
     scale: 1.02,
-    y: -2, 
+    y: -2,
     boxShadow: "0px 12px 35px rgba(31, 255, 165, 0.35)", // ⬅️ CHANGED: Slightly reduced shadow
     transition: {
       duration: 0.2, // ⬅️ CHANGED: Faster (0.3 → 0.2)
@@ -687,11 +681,11 @@ export const caseStudiesButtonVariants = {
 
 // Viewport configurations for Case Studies - UPDATED
 export const caseStudiesViewportConfig = {
-  section: { once: false, amount: 0.05 }, 
-  header: { once: false, amount: 0.4 }, 
-  grid: { once: false, amount: 0.1 }, 
-  card: { once: false, amount: 0.2 }, 
-  button: { once: false, amount: 0.3 }, 
+  section: { once: false, amount: 0.05 },
+  header: { once: false, amount: 0.4 },
+  grid: { once: false, amount: 0.1 },
+  card: { once: false, amount: 0.2 },
+  button: { once: false, amount: 0.3 },
 };
 
 // Pricing Section specific animations/////////
@@ -1679,8 +1673,8 @@ export const faqContainerVariants = {
 export const faqCardVariants = {
   hidden: {
     opacity: 0,
-    y: 50, 
-    scale: 0.95, 
+    y: 50,
+    scale: 0.95,
   },
   visible: {
     opacity: 1,
@@ -1688,7 +1682,7 @@ export const faqCardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94] as const, 
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
   hover: {
@@ -1725,7 +1719,7 @@ export const faqGreenDotVariants = {
     rotate: 0,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.55, 0.265, 1.55] as const, 
+      ease: [0.68, -0.55, 0.265, 1.55] as const,
     },
   },
   hover: {
