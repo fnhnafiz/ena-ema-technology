@@ -139,7 +139,9 @@ const LoginPage = () => {
             whileTap="tap"
             animate={loginButtonShimmerVariants.animate}
           >
-            Get my high-converting landing page
+            <span className="text-left">
+              Get my high-converting landing page
+            </span>
             <motion.div
               variants={loginArrowVariants}
               animate="animate"

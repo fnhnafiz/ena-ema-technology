@@ -92,7 +92,7 @@ const CaseStudies = () => {
               className="space-y-2"
             >
               <motion.button
-                className="bg-[#003D25] px-3 py-2 rounded-full text-[#B2B2B2] text-[12px] w-full flex  items-center"
+                className="bg-[#003D25] px-3 py-2 rounded-full text-[#B2B2B2]  w-full flex gap-2 justify-around items-center"
                 variants={caseStudiesBadgeVariants}
                 whileHover={{
                   scale: 1.02,
@@ -114,12 +114,12 @@ const CaseStudies = () => {
                 >
                   <Check size={20} className="text-[#1FFFA5]" />
                 </motion.div>
-                <span className="text-left">
+                <span className="text-left text-[10px] sm:text-[12px]">
                   20% high conversion than average in first week
                 </span>
               </motion.button>
               <motion.button
-                className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center"
+                className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2]  flex justify-around gap-2 items-center"
                 variants={caseStudiesBadgeVariants}
                 whileHover={{
                   scale: 1.02,
@@ -141,7 +141,9 @@ const CaseStudies = () => {
                 >
                   <Check size={20} className="text-[#1FFFA5]" />
                 </motion.div>
-                <span>Clean and modern design with clear CTA</span>
+                <span className="text-[10px] sm:text-[12px]">
+                  Clean and modern design with clear CTA
+                </span>
               </motion.button>
             </motion.div>
           </div>
@@ -178,7 +180,8 @@ const CaseStudies = () => {
               className="space-y-2"
             >
               <motion.button
-                className="bg-[#003D25] px-3 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center"
+                className="bg-[#003D25] px-3 py-2 rounded-full text-[#B2B2B2]  flex
+                justify-around gap-2 items-center"
                 variants={caseStudiesBadgeVariants}
                 whileHover={{
                   scale: 1.02,
@@ -200,10 +203,12 @@ const CaseStudies = () => {
                 >
                   <Check size={20} className="text-[#1FFFA5]" />
                 </motion.div>
-                <span>20% high conversion than average in first week</span>
+                <span className="text-[10px] sm:text-[12px]">
+                  20% high conversion than average in first week
+                </span>
               </motion.button>
               <motion.button
-                className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center"
+                className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2]  flex justify-around gap-2 items-center"
                 variants={caseStudiesBadgeVariants}
                 whileHover={{
                   scale: 1.02,
@@ -225,7 +230,9 @@ const CaseStudies = () => {
                 >
                   <Check size={20} className="text-[#1FFFA5]" />
                 </motion.div>
-                <span>Clean and modern design with clear CTA</span>
+                <span className="text-[10px] sm:text-[12px]">
+                  Clean and modern design with clear CTA
+                </span>
               </motion.button>
             </motion.div>
           </div>
@@ -262,7 +269,7 @@ const CaseStudies = () => {
               className="space-y-2"
             >
               <motion.button
-                className="bg-[#003D25] px-3 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center"
+                className="bg-[#003D25] px-3 py-2 rounded-full text-[#B2B2B2]  flex justify-around gap-2 items-center"
                 variants={caseStudiesBadgeVariants}
                 whileHover={{
                   scale: 1.02,
@@ -284,10 +291,12 @@ const CaseStudies = () => {
                 >
                   <Check size={20} className="text-[#1FFFA5]" />
                 </motion.div>
-                <span>20% high conversion than average in first week</span>
+                <span className="text-[10px] sm:text-[12px]">
+                  20% high conversion than average in first week
+                </span>
               </motion.button>
               <motion.button
-                className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2] text-[12px] flex items-center"
+                className="bg-[#003D25] px-4 py-2 rounded-full text-[#B2B2B2]  flex justify-around gap-2 items-center"
                 variants={caseStudiesBadgeVariants}
                 whileHover={{
                   scale: 1.02,
@@ -309,7 +318,9 @@ const CaseStudies = () => {
                 >
                   <Check size={20} className="text-[#1FFFA5]" />
                 </motion.div>
-                <span>Clean and modern design with clear CTA</span>
+                <span className="text-[10px] sm:text-[12px]">
+                  Clean and modern design with clear CTA
+                </span>
               </motion.button>
             </motion.div>
           </div>
